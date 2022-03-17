@@ -7,6 +7,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors())
 app.use("/admin", adminRoute);
+app.get('',(req,res)=>{
+    res.send('welcome crypto')
+})
 
 app.listen(process.env.PORT,()=>{
     console.log(`server is running on the port: ${process.env.PORT}`)

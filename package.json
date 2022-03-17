@@ -1,0 +1,20 @@
+{
+  "name": "crypto_sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "modules": "^0.4.0",
+    "mysql": "^2.18.1",
+    "node": "^17.7.1"
+  }
+}

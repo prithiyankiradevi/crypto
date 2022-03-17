@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors())
 app.use("/admin", adminRoute);
 app.get('',(req,res)=>{
-    res.send('welcome crypto')
+    res.status(200).send('welcome crypto')
 })
 
 app.listen(process.env.PORT,()=>{

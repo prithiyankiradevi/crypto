@@ -2,9 +2,10 @@ const adminModel=require('../model/admin_model')
 const jwt=require('jsonwebtoken')
 
 const adminLogin=(req,res)=>{
-    let username=req.body.username
+    console.log('hai')
+    let email=req.body.email
     let password=req.body.password
-    adminModel.adminLogin(username,async(err,data)=>{
+    adminModel.adminLogin(email,async(err,data)=>{
         if(err){
             res.status(400).send({success:'false',message:'failed'})
         }else if(data.length==0){

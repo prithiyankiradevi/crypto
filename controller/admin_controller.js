@@ -1,12 +1,14 @@
 const adminModel=require('../model/admin_model')
+const baseController=require('../controller/base_controller')
 const jwt=require('jsonwebtoken')
 
+const createAdmin=baseController.createOne(adminModel)
+
 const adminLogin=(req,res)=>{
-    console.log('hai')
     let email=req.body.email
     let password=req.body.password
     adminModel.adminLogin(email,async(err,data)=>{
-        if(err){
+        if(err){ 
             res.status(400).send({success:'false',message:'failed'})
         }else if(data.length==0){
             res.status(200).send({success:'false',message:'email does not exists',data:[]})
@@ -22,4 +24,13 @@ const adminLogin=(req,res)=>{
     })
 }
 
-module.exports={adminLogin}
+const updateAdmin=baseController.updateOne(adminModel)
+
+const deleteAdmin=baseController.deleteOne(adminModel)
+
+module.exports={
+    createAdmin,
+    adminLogin,
+    updateAdmin,
+    deleteAdmin
+}
